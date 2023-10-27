@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS game_yap_db;
+
+CREATE DATABASE game_yap_db;
