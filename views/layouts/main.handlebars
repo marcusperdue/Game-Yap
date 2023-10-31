@@ -6,35 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game-Yap</title>
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
 <body>
-  <header>
-   <nav>
-    <div class="logo"><a href="/">Game-Yap</a></div>
-    
- <ul>
-    <li><a href="/">Home</a></li>
-    {{#if loggedIn}}
-        <li><a href="/dashboard">Dashboard</a></li>
-        <li><button id="logout" class="btn-no-style logout">Logout</button></li>
-    {{else}}
-        <li><a href="/login">Login</a></li>
-    {{/if}}
-</ul>
+   <nav class="header p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-semibold"><a href="/">Game-Yap</a></h1>
+            <div class="flex items-center space-x-4">
+                <span class="inline-text"><a href="/">Home</a></span>
+                {{#if loggedIn}}
+                <span class="inline-text"><button id="logout" class="bg-transparent border border-white py-2 px-4 rounded-full text-white">Logout</button></span>
+                {{else}}
+                <span class="inline-text"><a href="/login">Login</a></span>
+                {{/if}}
+            </div>
+        </div>
     </nav>
-  </header>
 
-  <main class="container">
+  <main class="main-content">
     {{{body}}}
   </main>
 
 <script src="/js/logout.js"></script>
 
 
-  <footer>
-    &copy; Game-Yap
-  </footer>
-</body>
+  
 
 </html>
