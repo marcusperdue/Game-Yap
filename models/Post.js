@@ -3,7 +3,6 @@ const {
     DataTypes
 } = require('sequelize');
 const sequelize = require('../config/connection');
-const bcrypt = require('bcrypt');
 
 sequelize.sync({ force: false }) // Set force to true to drop and recreate tables (use with caution)
   .then(() => {
@@ -13,47 +12,42 @@ sequelize.sync({ force: false }) // Set force to true to drop and recreate table
     console.error('Error synchronizing the database:', error);
   }); 
   
-class User extends Model {
-    checkPassword(loginPw) {
-        return bcrypt.compareSync(loginPw, this.password);
-    }
-}
+class Post extends Model {}
 
-User.init({
+Post.init({
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true
     },
-    username: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    password: {
+    title: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-            len: [4]
+            len: [1]
+        }
+    },
+    content: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+            len: [1]
+        }
+    },
+    user_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'user',
+            key: 'id'
         }
     }
 }, {
-    hooks: {
-        async beforeCreate(newUserData) {
-            newUserData.password = await bcrypt.hash(newUserData.password, 10);
-            return newUserData;
-        },
-        async beforeUpdate(updatedUserData) {
-            updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
-            return updatedUserData;
-        }
-    },
     sequelize,
-    timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user'
+    modelName: 'post'
 })
 
 
-module.exports = User;
+module.exports = Post;

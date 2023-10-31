@@ -1,0 +1,9 @@
+<ul class="post-list">
+    {{#each posts as |post|}}
+    <li>
+        <div class="blog-card">
+            {{> post-info post }}
+        </div>
+    </li>
+    {{/each}}
+</ul>
