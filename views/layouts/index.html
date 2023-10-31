@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game-Yap</title>
+    <link rel="stylesheet" type="text/css" href="/public/css/styles.css">
+</head>
+
+<body>
+  <header>
+   <nav>
+    <div class="logo"><a href="/">Game-Yap</a></div>
+    
+ <ul>
+    <li><a href="/">Home</a></li>
+    {{#if loggedIn}}
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><button id="logout" class="btn-no-style logout">Logout</button></li>
+    {{else}}
+        <li><a href="/login">Login</a></li>
+    {{/if}}
+</ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    {{{body}}}
+  </main>
+
+<script src="/js/logout.js"></script>
+
+
+  <footer>
+    &copy; Game-Yap
+  </footer>
+</body>
+
+</html>
