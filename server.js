@@ -4,7 +4,6 @@ const cors = require('cors');
 const axios = require('axios');
 const dotenv = require('dotenv');
 dotenv.config();
-
 const routes = require('./controllers');
 const gameroutes = require('./controllers/gameRoutes'); // Include gameroutes
 const sequelize = require('./config/connection');
