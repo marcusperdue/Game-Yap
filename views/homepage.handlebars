@@ -1,25 +1,29 @@
 
-
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <div class="main-content">
-    <video autoplay muted loop poster="poster.jpg" id="bg-video">
+    <video autoplay muted loop poster="/images/logo.png" id="bg-video">
         <source src="/images/banner.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     <div class="container mx-auto h-full flex flex-col justify-center items-center text-center">
         <h2 class="text-5xl text-white font-semibold mb-20">Welcome to Game-Yap</h2>
         <div class="flex justify-end items-center relative">
-            <input type="text" placeholder="Search for games..." class="search-bar focus:outline-none" style="width: 1000px;">
+       <form id="search-form" action="/search" method="GET">
+  <input type="text" name="query" id="search-input" placeholder="Search...">
+  <button type="submit">Search</button>
+</form>
         </div>
     </div>
 </div>
 
 <div class="container mx-auto mt-4">
+    <h1 class="text-3xl text-center text-white font-semibold mt-4 mb-4">Popular Games</h1>
     <div class="max-w-7xl mx-auto rounded-lg shadow-lg">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" id="gameCards">
         </div>
     </div>
 </div>
 
+
+
+<script src="/js/search-bar.js"></script>
 <script src="/js/game-poster-home.js"></script>
- 

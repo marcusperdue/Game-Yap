@@ -5,7 +5,8 @@ const axios = require('axios');
 const dotenv = require('dotenv');
 dotenv.config();
 const routes = require('./controllers');
-const gameroutes = require('./controllers/gameRoutes'); // Include gameroutes
+const gameroutes = require('./controllers/gameRoutes');
+const searchRoutes = require('./controllers/searchRoutes');  
 const sequelize = require('./config/connection');
 const helpers = require('./utils/helpers');
 const exphbs = require('express-handlebars');
@@ -38,10 +39,9 @@ app.use(session(sess));
 
 app.use(cors());
 
-// Use the gameroutes router for paths starting with '/gameroutes'
 app.use('/gameRoutes', gameroutes);
-
-// Use the main routes for other paths
+app.use('/search', searchRoutes);
+ 
 app.use('/', routes);
 
 sequelize.sync().then(() => {
