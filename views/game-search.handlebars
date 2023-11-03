@@ -10,7 +10,7 @@
           <div class="game-card">
              <img src="{{this.background_image}}" alt="{{this.name}}" class="game-image" />
           <p>{{this.name}}</p>
-          {{this.rating}}
+           <p class="game-rating">{{{ this.rating}}}</p>
           </div>
         </li>
       {{/each}}
@@ -20,3 +20,4 @@
 </div>
 <!-- Your script tags go here -->
 <script src="/js/search-bar.js"></script>
+<script src="/Game-Yap/utils/helpers.js"
