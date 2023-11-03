@@ -6,9 +6,12 @@
       class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
     >
       {{#each gameData}}
-        <li class="p-4 bg-white rounded-lg shadow-lg">
-          <img src="{{this.background_image}}" alt="{{this.name}}" />
-          {{this.name}}
+        <li class="p-4  ">
+          <div class="game-card">
+             <img src="{{this.background_image}}" alt="{{this.name}}" class="game-image" />
+          <p>{{this.name}}</p>
+          {{this.rating}}
+          </div>
         </li>
       {{/each}}
     </ul>
