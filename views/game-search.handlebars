@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <div class="container mx-auto mt-4">
   <h1 class="text-3xl text-center text-white font-semibold mt-4 mb-4">Game
     Search Results</h1>
@@ -11,7 +12,14 @@
              <a href="/game-review/{{this.id}}" class="block cursor-pointer">
              <img src="{{this.background_image}}" alt="{{this.name}}" class="game-image" />
           <p class="text-white text-center">{{this.name}}</p>
-          <p class="text-white">{{this.rating}}</p>
+          
+          <div class="game-rating">
+          {{#if (gt this.rating 0.5)}}<i class="fa-solid fa-gamepad"></i>{{/if}}
+          {{#if (gt this.rating 1.5)}}<i class="fa-solid fa-gamepad"></i>{{/if}}
+          {{#if (gt this.rating 2.5)}}<i class="fa-solid fa-gamepad"></i>{{/if}}
+          {{#if (gt this.rating 3.5)}}<i class="hi fa-solid fa-gamepad"></i>{{/if}}
+          {{#if (gt this.rating 4.5)}}<i class="fa-solid fa-gamepad"></i>{{/if}}
+        </div>
           </a>
           </div>
         </li>
@@ -22,4 +30,4 @@
 </div>
  
 <script src="/js/search-bar.js"></script>
-<script src="/Game-Yap/utils/helpers.js"
+
