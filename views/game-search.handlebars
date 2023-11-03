@@ -8,9 +8,11 @@
       {{#each gameData}}
         <li class="p-4  ">
           <div class="game-card">
+             <a href="/game-review/{{this.id}}" class="block cursor-pointer">
              <img src="{{this.background_image}}" alt="{{this.name}}" class="game-image" />
-          <p>{{this.name}}</p>
-           <p class="game-rating">{{{ this.rating}}}</p>
+          <p class="text-white text-center">{{this.name}}</p>
+          <p class="text-white">{{this.rating}}</p>
+          </a>
           </div>
         </li>
       {{/each}}
@@ -18,6 +20,6 @@
 
   </div>
 </div>
-<!-- Your script tags go here -->
+ 
 <script src="/js/search-bar.js"></script>
 <script src="/Game-Yap/utils/helpers.js"
