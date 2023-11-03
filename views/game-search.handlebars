@@ -1,0 +1,18 @@
+
+  <div class="container mx-auto mt-4">
+    <h1 class="text-3xl text-center text-white font-semibold mt-4 mb-4">Game Search Results</h1>
+    <div class="max-w-7xl mx-auto rounded-lg shadow-lg">
+      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        {{#each gameNames}}
+        <li class="p-4 bg-white rounded-lg shadow-lg">
+          <!-- Display each game name here -->
+          {{this}}
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+  <!-- Your script tags go here -->
+  <script src="/js/search-bar.js"></script>
+
+
