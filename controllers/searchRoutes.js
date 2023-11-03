@@ -7,11 +7,12 @@ router.get('/', async (req, res) => {
   try {
     const searchQuery = req.query.query;
 
-    // Process the search query and obtain game names
-    const gameNames = await processSearchQuery(searchQuery);
+    // Process the search query and obtain game data
+    const gameData = await processSearchQuery(searchQuery);
 
-    // Render the game-search.handlebars template with the gameNames data
-    res.render('game-search', { gameNames });
+// Render the game-search.handlebars template with the gameData
+   res.render('game-search', { gameData });
+
   } catch (error) {
     console.error('Error performing search:', error);
     // Handle errors and send an appropriate response
@@ -28,10 +29,11 @@ async function processSearchQuery(query) {
     // Extract the game data from the response
     const games = response.data.results;
 
-    // Map the game data to return an array of game names
-    const gameNames = games.map((game) => game.name);
+    // Map the game data to return an array of game names, images, and ratings
+   const gameData = games.map((game) => ({ name: game.name, background_image: game.background_image , rating: game.rating}));
 
-    return gameNames;
+   return gameData;
+
   } catch (error) {
     console.error('Error fetching game data from RAWG API:', error);
 
