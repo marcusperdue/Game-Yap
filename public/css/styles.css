@@ -92,8 +92,8 @@
             background:
               linear-gradient(
                 to right,
-                rgba(100, 200, 200, 1),
-                rgba(100, 200, 200, 1)
+                rgb(19, 19, 19),
+                rgb(19, 19, 19)
               ),
               linear-gradient(
                 to right,
@@ -104,7 +104,7 @@
             background-size: 100% 3px, 0 3px;
             background-position: 100% 100%, 0 100%;
             background-repeat: no-repeat;
-            transition: background-size 400ms;
+            transition: background-size 1s;
           }
           
           a:hover {
