@@ -20,19 +20,27 @@ document.addEventListener('DOMContentLoaded', () => {
           // Populate the game names and images in the HTML structure
           if (games && games.length > 0) {
             games.forEach((game) => {
+              console.log(game)
+              console.log("Rating:", game.rating);
               const gameCard = document.createElement('div'); // Create a card for each game
               gameCard.className = 'game-card';
   
               const gameImage = document.createElement('img'); // Create an image element
-              gameImage.src = game.image; // Set the image source from the game data
+
+              
+              gameImage.src = game.background_image; // Set the image source from the game data
               gameImage.alt = game.name; // Set alt text to the game name
               gameCard.appendChild(gameImage); // Append the image to the card
   
               const gameNameElement = document.createElement('p'); // Create a paragraph element for the game name
               gameNameElement.textContent = game.name; // Set the text content to the game name
               gameCard.appendChild(gameNameElement); // Append the name to the card
-  
+              const gameRatingElement = document.createElement('p'); // Create a paragraph element for the game rating
+              gameRatingElement.textContent = game.ratings; // Set the text content to the game rating
+              gameCard.appendChild(gameRatingElement); 
+
               gameResultsElement.appendChild(gameCard); // Append the card to the results element
+              console.log(game)
             });
           } else {
             gameResultsElement.textContent = 'No games found.';
