@@ -69,7 +69,7 @@
             bottom: 0; /* Position from the bottom of the container */
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 125%;
             object-fit: cover;
             z-index: -1;
         }
