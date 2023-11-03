@@ -1,17 +1,14 @@
-<script src="https://cdn.tailwindcss.com"></script>
-<!DOCTYPE html>
-<html lang="en">
+<main class="flex flex-col items-center justify-center">
+    <article class="text-center">
+         <div class="game-image-container" style="height: 800px; overflow: hidden;">
+            <img src="{{ gameImage }}" alt="{{ gameTitle }}" class="game-image" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Game Reviews</title>
-  <link rel="stylesheet" href="/css/styles.css">
-</head>
-
-<body>
-  <h1>Reviews for Game 1</h1>
-  <!-- Display reviews for Game 1 here -->
-</body>
-
-</html>
+        <h2 class="text-white">{{ gameTitle }}</h2>
+        <!-- Display Game Summary with smaller font size -->
+        <div class="game-summary text-white">
+            <h3 class="text-white">Summary</h3>
+           <p class="text-white text-sm">{{{ gameSummary }}}</p>
+        </div>
+    </article>
+</main>

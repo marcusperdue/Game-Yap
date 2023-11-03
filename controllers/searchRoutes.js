@@ -30,7 +30,11 @@ async function processSearchQuery(query) {
     const games = response.data.results;
 
     // Map the game data to return an array of game names, images, and ratings
-   const gameData = games.map((game) => ({ name: game.name, background_image: game.background_image , rating: game.ratings}));
+   const gameData = games.map((game) => ({ 
+    name: game.name,
+    id: game.id,
+     background_image: game.background_image , 
+     rating: game.rating}));
 
    return gameData;
 
