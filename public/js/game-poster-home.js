@@ -27,6 +27,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                 gameCard.appendChild(gameDetails);
 
                 gameCardsContainer.appendChild(gameCard);
+                console.log(game)
             }
         });
     } catch (error) {
