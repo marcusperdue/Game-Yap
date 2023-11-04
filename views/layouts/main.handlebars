@@ -10,19 +10,21 @@
 </head>
 
 <body>
-   <nav class="header p-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-semibold text-indigo-600"><a href="/" class="hover:underline">Game-Yap</a></h1>
-            <div class="flex items-center space-x-4">
-                <span class="inline-text" style="color: #3949AB;"><a href="/" class="hover:underline">Home</a></span>
-                {{#if loggedIn}}
-                <span class="inline-text"><button id="logout" class="bg-transparent border border-white py-2 px-4 rounded-full text-white">Logout</button></span>
-                {{else}}
-                <span class="inline-text "style="color: #3949AB;"><a href="/login" class="hover:underline">Login</a></span>
-                {{/if}}
-            </div>
+<nav class="header p-4 fixed top-0 left-0 w-full z-50 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-semibold text-indigo-600"><a href="/" class="hover:underline">Game-Yap</a></h1>
+        <div class="flex items-center space-x-4">
+            <span class="inline-text text-indigo-600 text-xl"><a href="/" class="hover:underline">Home</a></span>
+            {{#if loggedIn}}
+            <span class="inline-text text-indigo-600 text-xl"><button id="logout" class="bg-transparent border border-white py-2 px-4 rounded-full">Logout</button></span>
+            {{else}}
+            <span class="inline-text text-indigo-600 text-xl"><a href="/login" class="hover:underline">Login</a></span>
+            {{/if}}
         </div>
-    </nav>
+    </div>
+</nav>
+
+
 
   <main class="main-content">
     {{{body}}}

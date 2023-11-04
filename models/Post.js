@@ -1,53 +1,32 @@
-const {
-    Model,
-    DataTypes
-} = require('sequelize');
+// models/Post.js
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-sequelize.sync({ force: false }) // Set force to true to drop and recreate tables (use with caution)
-  .then(() => {
-    console.log('Database and tables are synchronized.');
-  })
-  .catch((error) => {
-    console.error('Error synchronizing the database:', error);
-  }); 
-  
 class Post extends Model {}
 
-Post.init({
+Post.init(
+  {
     id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
     },
     title: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            len: [1]
-        }
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     content: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            len: [1]
-        }
+      type: DataTypes.TEXT,
+      allowNull: false,
     },
-    user_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'user',
-            key: 'id'
-        }
-    }
-}, {
+  },
+  {
     sequelize,
-    freezeTableName: true,
+    modelName: 'post',
     underscored: true,
-    modelName: 'post'
-})
-
+    freezeTableName: true,
+  }
+);
 
 module.exports = Post;

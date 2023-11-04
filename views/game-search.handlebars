@@ -1,24 +1,20 @@
-<div class="container mx-auto mt-4">
-  <h1 class="text-3xl text-center text-white font-semibold mt-4 mb-4">Game
-    Search Results</h1>
-  <div class="max-w-7xl mx-auto rounded-lg shadow-lg">
-    <ul
-      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
-    >
-      {{#each gameData}}
-        <li class="p-4  ">
-          <div class="game-card">
-             <a href="/game-review/{{this.id}}" class="block cursor-pointer">
-             <img src="{{this.background_image}}" alt="{{this.name}}" class="game-image" />
-          <p class="text-white text-center">{{this.name}}</p>
-          <p class="text-white">{{this.rating}}</p>
-          </a>
-          </div>
-        </li>
-      {{/each}}
-    </ul>
+<section class="container mx-auto mt-4">
+    <h1 class="text-3xl text-center text-white font-semibold mt-4 mb-4">Game Search Results</h1>
+    <div class="max-w-7xl mx-auto rounded-lg shadow-lg">
+        <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {{#each gameData}}
+                <li class="p-4">
+                    <div class="game-card">
+                        <a href="/game-review/{{this.id}}" class="block cursor-pointer">
+                            <img src="{{this.background_image}}" alt="{{this.name}}" class="game-image" />
+                            <p class="text-white text-center">{{this.name}}</p>
+                            <p class="text-white">{{this.rating}}</p>
+                        </a>
+                    </div>
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</section>
 
-  </div>
-</div>
- 
 <script src="/js/search-bar.js"></script>

@@ -1,19 +1,17 @@
-
-<div class="main-content">
-    <video autoplay muted loop poster="/images/logo.png" id="bg-video">
+<section class="main-content relative h-screen">
+    <video autoplay muted loop poster="/images/logo.png" id="bg-video" class="w-full h-full object-cover">
         <source src="/images/banner.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-    <div class="container mx-auto h-full flex flex-col justify-center items-center text-center">
-        <h2 class="text-5xl text-white font-semibold mb-20">Welcome to Game-Yap</h2>
-        <div class="flex justify-end items-center relative">
-       <form id="search-form" action="/search" method="GET">
-  <input type="text" name="query" id="search-input" placeholder="Search..." style="background-color: rgba(0, 0, 0, 0.5); color:aliceblue; border-radius: 5px;">
-  <button type="submit" style="color: white; padding-bottom: 100px;">Search</button>
-</form>
-        </div>
+    <div class="absolute inset-0 flex flex-col justify-start items-center text-center bg-opacity-50 bg-black">
+        <h2 class="text-6xl text-white font-semibold mt-40 mb-20">Welcome to Game-Yap</h2>
+        <form id="search-form" action="/search" method="GET" class="flex justify-center">
+            <input type="text" name="query" id="search-input" placeholder="Find a Game..." class="bg-gray-800 text-white rounded-l-lg p-2">
+            <button type="submit" class="bg-indigo-600 text-white rounded-r-lg p-2">Search</button>
+        </form>
     </div>
-</div>
+</section>
+
 
 <div class="container mx-auto mt-4">
     <h1 class="text-3xl text-center text-white font-semibold mt-4 mb-4">Popular Games</h1>
@@ -22,8 +20,6 @@
         </div>
     </div>
 </div>
-
-
 
 <script src="/js/search-bar.js"></script>
 <script src="/js/game-poster-home.js"></script>

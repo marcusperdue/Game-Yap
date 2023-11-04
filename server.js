@@ -8,6 +8,7 @@ const routes = require('./controllers');
 const gameroutes = require('./controllers/gameRoutes');
 const searchRoutes = require('./controllers/searchRoutes');  
 const gameReviewRoutes = require('./controllers/gameReviewRoutes');
+ 
 const sequelize = require('./config/connection');
 const helpers = require('./utils/helpers');
 const exphbs = require('express-handlebars');
@@ -43,6 +44,8 @@ app.use(cors());
 app.use('/gameRoutes', gameroutes);
 app.use('/search', searchRoutes);
 app.use('/game-review', gameReviewRoutes);
+ 
+ 
  
 app.use('/', routes);
 
