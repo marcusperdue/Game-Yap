@@ -1,4 +1,3 @@
- 
 window.addEventListener('DOMContentLoaded', async () => {
     try {
         const response = await axios.get('/gameroutes/games');
@@ -9,6 +8,11 @@ window.addEventListener('DOMContentLoaded', async () => {
             if (game.background_image) {
                 const gameCard = document.createElement('div');
                 gameCard.className = 'game-card';
+
+                // Create a clickable link to the game review page
+                const gameLink = document.createElement('a');
+                gameLink.href = `/game-review/${game.id}`; // Set the correct URL
+                gameLink.className = 'block cursor-pointer';
 
                 const gameImage = document.createElement('img');
                 gameImage.className = 'game-image';
@@ -23,11 +27,12 @@ window.addEventListener('DOMContentLoaded', async () => {
                 gameTitle.textContent = game.name;
 
                 gameDetails.appendChild(gameTitle);
-                gameCard.appendChild(gameImage);
-                gameCard.appendChild(gameDetails);
+                gameLink.appendChild(gameImage);
+                gameLink.appendChild(gameDetails);
+                gameCard.appendChild(gameLink); // Append the link to the card
 
                 gameCardsContainer.appendChild(gameCard);
-                console.log(game)
+                console.log(game);
             }
         });
     } catch (error) {

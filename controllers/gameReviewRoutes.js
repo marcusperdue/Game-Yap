@@ -30,7 +30,11 @@ router.get('/:gameId', async (req, res) => {
     const gameImage = gameData.background_image; // Extract the game image URL
 
     // Render the "game-review.handlebars" template with game data
-    res.render('game-review', { gameTitle, gameSummary, gameImage }); // Pass the game image to the template
+    res.render('game-review', { gameTitle,
+      gameSummary,
+      gameImage,
+      textClass: 'text-size-small' // Pass the custom CSS class to the template
+    }); // Pass the game image to the template
   } catch (error) {
     console.error('Network error while fetching game details from RAWG API:', error);
     res.status(500).render('error', { message: 'Internal server error' });
