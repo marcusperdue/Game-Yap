@@ -1,15 +1,15 @@
-// logoutRoutes.js
-const router = require('express').Router();
+const express = require('express');
+const router = express.Router();
 
+// Handle logout using a GET request
 router.get('/', (req, res) => {
-  // Destroy the user session to log them out (using express-session)
+  // Clear the session data (e.g., userId, username)
   req.session.destroy((err) => {
     if (err) {
-      console.error(err);
-      res.status(500).json({ error: 'Logout failed' });
+      console.error('Logout error:', err);
+      res.status(500).json({ error: 'Internal server error' });
     } else {
-      // Redirect the user to the login or home page, or send a success response
-      res.redirect('/login'); // You can change the redirect URL as needed
+      res.redirect('/'); // Redirect to the home page after logout
     }
   });
 });

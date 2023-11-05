@@ -1,6 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../models');
-const bcrypt = require('bcrypt');
+const { User } = require('../models/');
 
 router.post('/', async (req, res) => {
   try {
@@ -17,13 +16,10 @@ router.post('/', async (req, res) => {
       return res.status(409).render('signup', { error: 'Username is already taken' });
     }
 
-    // Hash password
-    const hashedPassword = await bcrypt.hash(password, 10);
-
-    // Create user
+    // Create user (no need to hash password here, the model's beforeCreate hook will do it)
     const newUser = await User.create({
       username,
-      password: hashedPassword,
+      password, // Passed directly to User.create; will be hashed in the beforeCreate hook
     });
 
     // Redirect or render upon successful registration

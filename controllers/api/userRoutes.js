@@ -12,6 +12,13 @@ router.post('/', async (req, res) => {
       res.status(200).json(userData);
     });
   } catch (err) {
-    res.status(400).json(err);
+    console.error(err); // Log the error for debugging
+    if (err.name === 'SequelizeValidationError' || err.name === 'SequelizeUniqueConstraintError') {
+      // Handle Sequelize validation errors
+      res.status(400).json({ message: 'Validation error', errors: err.errors });
+    } else {
+      // Handle other errors
+      res.status(500).json({ message: 'An error occurred while creating the user', error: err });
+    }
   }
 });

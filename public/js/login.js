@@ -1,24 +1,18 @@
-
-const login = async (event) => {
-    event.preventDefault();
-    const email = document.querySelector('#email').value.trim();
-    const password = document.querySelector('#password').value.trim();
-
-    if (email && password) {
-        const response = await fetch('api/user/login', {
-            method: 'POST',
-            body: JSON.stringify({email, password}),
-            headers:{'Content-Type': 'aplication/json'},
-
-        });
-        if(response.ok){
-            document.location('/');
-        }else{
-            alert('please try again lol')
+document.addEventListener('DOMContentLoaded', () => {
+  const logoutButton = document.getElementById('logout');
+  if (logoutButton) {
+    logoutButton.addEventListener('click', async () => {
+      try {
+        // Send a logout request to the server (AJAX request)
+        const response = await axios.post('/logout');
+        
+        if (response.status === 200) {
+          // Logout successful, reload the page or perform any other actions
+          window.location.reload(); // Reload the page for demonstration
         }
-        }
-    };
-
-    document
-    .querySelector('.loginForm')
-    .addEventListener('submit', login);
+      } catch (error) {
+        console.error('Logout error:', error);
+      }
+    });
+  }
+});

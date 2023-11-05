@@ -15,8 +15,8 @@
         <h1 class="text-2xl font-semibold text-indigo-600"><a href="/" class="hover:underline">Game-Yap</a></h1>
         <div class="flex items-center space-x-4">
             <span class="inline-text text-indigo-600 text-xl"><a href="/" class="hover:underline">Home</a></span>
-            {{#if loggedIn}}
-            <span class="inline-text text-indigo-600 text-xl"><button id="logout" class="bg-transparent border border-white py-2 px-4 rounded-full">Logout</button></span>
+          {{#if loggedIn}}
+            <span class="inline-text text-indigo-600 text-xl"><a href="/logout" class="hover:underline">Logout</a></span>
             {{else}}
             <span class="inline-text text-indigo-600 text-xl"><a href="/login" class="hover:underline">Login</a></span>
             {{/if}}
@@ -30,9 +30,9 @@
     {{{body}}}
   </main>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="/js/logout.js"></script>
 <script src="/js/game-poster-home.js"></script>
 <script src="/js/search-bar.js"></script>
+<script src="/js/login.js"></script>
 
 
   

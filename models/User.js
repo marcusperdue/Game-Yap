@@ -8,7 +8,6 @@ class User extends Model {
     return await bcrypt.compare(password, this.password);
   }
 }
-
 User.init(
   {
     id: {
@@ -25,7 +24,7 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [8], // Minimum password length
+        len: [1], // Minimum password length
       },
     },
   },
