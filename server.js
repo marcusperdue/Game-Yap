@@ -49,7 +49,7 @@ app.use(session(sess));
 
 app.use(cors());
 
-app.use('/games', gameroutes);
+app.use('/gameRoutes', gameroutes);
 app.use('/search', searchRoutes);
 app.use('/game-review', gameReviewRoutes);
 app.use('/register', registrationRoutes);
