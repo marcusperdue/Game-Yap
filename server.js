@@ -3,12 +3,16 @@ const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
 const dotenv = require('dotenv');
+const validator = require('validator');
+
 dotenv.config();
 const routes = require('./controllers');
 const gameroutes = require('./controllers/gameRoutes');
 const searchRoutes = require('./controllers/searchRoutes');  
 const gameReviewRoutes = require('./controllers/gameReviewRoutes');
- 
+const registrationRoutes = require('./controllers/registrationRoutes');
+const loginRoutes = require('./controllers/loginRoutes');
+const logoutRoutes = require('./controllers/logoutRoutes');
 const sequelize = require('./config/connection');
 const helpers = require('./utils/helpers');
 const exphbs = require('express-handlebars');
@@ -45,11 +49,12 @@ app.use(session(sess));
 
 app.use(cors());
 
-app.use('/gameRoutes', gameroutes);
+app.use('/games', gameroutes);
 app.use('/search', searchRoutes);
 app.use('/game-review', gameReviewRoutes);
- 
- 
+app.use('/register', registrationRoutes);
+app.use('/login', loginRoutes);
+app.use('/logout', logoutRoutes);
  
 app.use('/', routes);
 
