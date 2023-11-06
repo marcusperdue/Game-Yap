@@ -30,7 +30,8 @@ router.get('/:gameId', async (req, res) => {
       gameTitle,
       gameSummary,
       gameImage,
-      textClass: 'text-size-small',
+      gameId,
+      textClass: 'text-sm',
       loggedIn,
     });
  } catch (error) {
@@ -51,7 +52,7 @@ router.post('/:gameId/post-comment', withAuth, async (req, res) => {
 
     // Create a new comment in your database
     const newComment = await Comment.create({
-      text: commentText, // Use the correct field name 'text'
+      comment_text: commentText, // Change 'text' to 'comment_text' to match the Sequelize model
       gameId: gameId, // Associate the comment with the game
       userId: req.session.userId, // Associate with the user who posted the comment
     });
