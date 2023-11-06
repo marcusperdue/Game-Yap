@@ -86,6 +86,23 @@
                 height: 1000px;
             }
         }
+
+        @media screen and (min-width: 768px) {
+            body {
+              font-size: 18px;
+            }
+          
+            .game-card {
+              width: 400px;
+            }
+          
+            .main-content {
+              height: 800px;
+            }
+            body {
+                font-size: 16px;
+              }
+          }
         
         a {
             color: inherit;
