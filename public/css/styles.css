@@ -96,8 +96,8 @@
             background:
               linear-gradient(
                 to right,
-                #000020,
-                #000020
+                rgba(0, 0, 0, 0), /* Color #000020 with 100% transparency */
+                rgba(0, 0, 0, 0)
               ),
               linear-gradient(
                 to right,
@@ -129,4 +129,3 @@
             gap: 3px;
             padding-bottom: 5px;
           }
-          
