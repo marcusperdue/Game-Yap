@@ -1,38 +1,43 @@
 <section class="flex flex-col items-center justify-center">
     <article class="text-center">
-        <div class="flex justify-center items-center h-screen"> <!-- Use Tailwind classes to center content -->
-            <div class="game-image-container" style="height: 500px; overflow: hidden;">
-                <img src="{{ gameImage }}" alt="{{ gameTitle }}" class="game-image" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="flex justify-center items-center h-screen">
+            <!-- Game Image Container -->
+            <div class="game-image-container h-96 overflow-hidden">
+                <img src="{{ gameImage }}" alt="{{ gameTitle }}" class="game-image object-cover w-full h-full">
             </div>
         </div>
 
-        <h2 class="text-white">{{ gameTitle }}</h2>
-        <!-- Display Game Summary with smaller font size -->
-        <div class="game-summary text-white">
-            <h3 class="text-white">Summary</h3>
+        <h2 class="text-white text-2xl mt-4">{{ gameTitle }}</h2>
+        
+        <!-- Display Game Summary -->
+        <div class="game-summary text-white mt-2">
+            <h3 class="text-white text-lg">Summary</h3>
             <p class="text-white">{{{ gameSummary }}}</p>
         </div>
-    </article>
-    {{#if isAuthenticated}}
-    <!-- Display Comment Form -->
-    <form action="/post-comment" method="POST">
-        <textarea name="commentText" placeholder="Write a comment"></textarea>
-        <button type="submit">Submit Comment</button>
-    </form>
-    {{else}}
-    <p>Sign in to leave a comment</p>
-    {{/if}}
 
-    <!-- Display Comments -->
-    <section class="comments-section text-center mt-4">
-        <h3 class="text-white">Comments</h3>
-        <div id="commentList">
-            {{#each comments}}
-            <div class="text-white comment">
-                <p class="text-white">{{text}}</p>
-                <p class="text-white">{{user.username}}</p>
+        <!-- Comment Form if Authenticated -->
+        {{#if loggedIn}}
+       <form action="/game-review/{{gameId}}/post-comment" method="POST" class="mt-4">
+  <textarea name="commentText" placeholder="Write a comment" class="w-full p-2 border rounded"></textarea>
+  <button type="submit" class="mt-2 bg-blue-500 text-white py-2 px-4 rounded">Submit Comment</button>
+</form>
+        {{else}}
+        <!-- Prompt to Sign in if Not Authenticated -->
+        <p class="mt-4 text-white">Sign in to leave a comment</p>
+        {{/if}} 
+        <h3 class="text-white text-xl">Comments</h3>
+
+        <!-- Display Comments -->
+        <section class="comments-section text-center mt-4">
+           
+            <div id="commentList" class="mt-2">
+                {{#each comments}}
+                <div class="text-white comment mt-2">
+                    <p class="text-white">{{text}}</p>
+                    <p class="text-white font-bold">{{user.username}}</p>
+                </div>
+                {{/each}}
             </div>
-            {{/each}}
-        </div>
-    </section>
+        </section>
+    </article>
 </section>

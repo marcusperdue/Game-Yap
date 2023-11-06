@@ -23,17 +23,19 @@ router.post('/', async (req, res) => {
     }
 
     // If password matches, set up the session
-    req.session.userId = user.id; // Store user's id (or any other identifier) in session
-    req.session.username = user.username; // Optionally store other user info
-    req.session.loggedIn = true; // Set loggedIn to true in the session
-
-    res.redirect('/'); // Redirect to home page
+    req.session.userId = user.id;
+    req.session.username = user.username;
+    req.session.loggedIn = true;
+    console.log('Session data after login:', req.session);
+    req.session.save(() => {
+      console.log('User authenticated and session saved.');
+      res.redirect('/'); // Redirect to home page
+    });
+    
   } catch (error) {
     console.error('Login error:', error);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
-
-
 
 module.exports = router;

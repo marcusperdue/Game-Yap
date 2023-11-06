@@ -3,12 +3,14 @@ document.addEventListener('DOMContentLoaded', () => {
   if (logoutButton) {
     logoutButton.addEventListener('click', async () => {
       try {
-        // Send a logout request to the server (AJAX request)
+        console.log('Sending logout request...');
         const response = await axios.post('/logout');
         
         if (response.status === 200) {
-          // Logout successful, reload the page or perform any other actions
+          console.log('Logout successful');
           window.location.reload(); // Reload the page for demonstration
+        } else {
+          console.log('Logout request did not return 200 status:', response.status);
         }
       } catch (error) {
         console.error('Logout error:', error);
