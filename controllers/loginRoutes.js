@@ -23,9 +23,16 @@ router.post('/', async (req, res) => {
     }
 
     // If password matches, set up the session
+    
     req.session.userId = user.id;
     req.session.username = user.username;
     req.session.loggedIn = true;
+
+    req.session.user = {
+      id: user.id,
+      username: user.username,
+    };
+
     console.log('Session data after login:', req.session);
     req.session.save(() => {
       console.log('User authenticated and session saved.');

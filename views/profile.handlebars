@@ -1,15 +1,17 @@
-<!-- views/profile.handlebars -->
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile</title>
-</head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css" rel="stylesheet">
+    
+
 <body>
-    <h1>User Profile</h1>
-    <p>Welcome, {{ user.username }}</p>
-    <!-- Display other user profile information here -->
+    <div class="flex justify-center items-center h-screen">
+        <div class="bg-white p-8 rounded-lg w-1/2 h-1/2 shadow-md max-w-md">
+            {{!-- <img src="your-profile-image.jpg" alt="User Profile Image" class="w-32 h-32 mx-auto rounded-full"> --}}
+            <h1 class="text-2xl font-semibold text-center mt-4">{{user.username}}</h1>
+            <ul class="mt-6">
+                <h1>Welcome, {{user.username}}!</h1>
+                <!-- Your user profile information here -->
+            </ul>
+        </div>
+    </div>
 </body>
-</html>
+

@@ -11,6 +11,7 @@ const gameReviewRoutes = require('./controllers/gameReviewRoutes');
 const registrationRoutes = require('./controllers/registrationRoutes');
 const loginRoutes = require('./controllers/loginRoutes');
 const logoutRoutes = require('./controllers/logoutRoutes');
+const profileRoutes = require('./controllers/profileRoutes');
  
 const helpers = require('./utils/helpers');
 const exphbs = require('express-handlebars');
@@ -60,6 +61,7 @@ app.use('/game-review', gameReviewRoutes);
 app.use('/register', registrationRoutes);
 app.use('/login', loginRoutes);
 app.use('/logout', logoutRoutes);
+app.use('/profile', profileRoutes);
  
 
 app.use('/', routes);

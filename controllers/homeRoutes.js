@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
+const  withAuth  = require('../utils/auth');
 const {
     User,
     Post,
@@ -110,6 +111,7 @@ router.get('/signup', (req, res) => {
 
     res.render('signup');
 });
+
 
 
 router.get('*', (req, res) => {

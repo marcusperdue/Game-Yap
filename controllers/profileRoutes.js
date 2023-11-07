@@ -1,13 +1,18 @@
 // Import necessary modules and middleware
 const express = require('express');
 const router = express.Router();
-const { withAuth } = require('../utils/auth'); // Import the withAuth middleware to protect the route
+const withAuth = require('../utils/auth')
 
-// Define the "Profile" route
-router.get('/profile', withAuth, (req, res) => {
-  // You can access the logged-in user's data from req.session.user
+// Define routes related to the user profile
+router.get('/', withAuth, (req, res) => {
+  // Access the logged-in user's data from req.session.user
+  console.log('hello');
+
   const user = req.session.user;
-  res.render('profile', { user }); // Render the "profile" template with the user data
+  
+  // Render the "profile" template with the user data
+  res.render('profile', { user });
+  console.log(user);
 });
 
 module.exports = router;
