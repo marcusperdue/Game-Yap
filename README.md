@@ -1,6 +1,7 @@
 <div align="center">
-  
+
 # Game-Yap
+<img src="./public/images/Game-Yap screenshot.png" alt="">
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
    [![HTML](https://img.shields.io/badge/HTML5-%23E34F26.svg?style=flat&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
@@ -14,7 +15,7 @@
 </div>
 
 ## Description
-
+Game Yap is an innovative web application designed to provide an immersive and interactive gaming experience for users. Our platform serves as a comprehensive hub for both seasoned gamers and newcomers, offering a wide array of features that cater to the diverse gaming community.
 ## Team Members
 
 * **[Chris](https://github.com/CrisCo116)** - Role (Developer, Designer)
@@ -32,20 +33,23 @@
  
 To install this project, follow these steps:
 
-1.  
+1. Run `npm install` to install all dependencies.
 
-2.  
- 
+2. Run `SOURCE db/schema.sql` folder in MySQL Workbench.
+
+3. Run `npm start` to create a local server.
+
 
 ## Usage
 To use this application:
 
+1. Open your browser and navigate to the deployed application.
+
+2. Create an account or login to your existing account.
+
+## Motivation
+Our team's motivation for this project was to create a web app that would allow gamers to view game ratings and reviews, as well as create their own reviews.
  
 ## License
 
 [MIT License](https://opensource.org/licenses/MIT)
-
-## Contacts
-* Email:  
-* Github:  
-* Portfolio:  
