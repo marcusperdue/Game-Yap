@@ -4,38 +4,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="64x64" href="/images/logo.png">
     <title>Game-Yap</title>
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
 </head>
 
 <body>
-<nav class="header p-4 fixed top-0 left-0 w-full z-50 shadow-md">
-    <div class="container mx-auto flex justify-between items-center">
-        <h1 class="text-2xl font-semibold text-indigo-600"><a href="/" class="hover:underline">Game-Yap</a></h1>
-        <div class="flex items-center space-x-4">
-            <span class="inline-text text-indigo-600 text-xl"><a href="/" class="hover:underline">Home</a></span>
-            {{#if loggedIn}}
-              <span class="inline-text text-indigo-600 text-xl"><a href="/profile" class="hover:underline">Profile</a></span>
-              <span class="inline-text text-indigo-600 text-xl"><a href="/logout" class="hover:underline">Logout</a></span>
-            {{else}}
-              <span class="inline-text text-indigo-600 text-xl"><a href="/login" class="hover:underline">Login</a></span>
-            {{/if}}
+    <nav class="header p-4 fixed top-0 left-0 w-full z-50 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-semibold text-indigo-600"><a href="/" class="hover:underline"> <img src="/images/logo-text.png" alt="" width="150" height="50" class="expand-on-hover"></a></h1>
+            <div class="lg:hidden">
+                <!-- Mobile Hamburger Icon -->
+                <button id="mobile-menu-button" class="block text-white hover:text-indigo-600 focus:outline-none focus:text-indigo-600 lg:hidden">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                <!-- Mobile navigation links go here -->
+               <div id="mobile-menu" class="hidden lg:hidden">
+    <span class="block text-indigo-600 text-1xl"><a href="/" class="hover:underline">Home</a></span>
+    <!-- Conditional rendering based on login -->
+    <span class="block text-indigo-600 text-1xl"><a href="/profile" class="hover:underline">Profile</a></span>
+    <span class="block text-indigo-600 text-1xl"><a href="/logout" class="hover:underline">Logout</a></span>
+    <!-- ... other menu items -->
+</div>
+            </div>
+            <div class="hidden lg:flex items-center space-x-4">
+                <!-- Desktop navigation links go here -->
+                <span class="inline-text text-indigo-600 text-1xl"><a href="/" class="hover:underline">Home</a></span>
+                {{#if loggedIn}}
+                <span class="inline-text text-indigo-600 text-1xl"><a href="/profile" class="hover:underline">Profile</a></span>
+                <span class="inline-text text-indigo-600 text-1xl"><a href="/logout" class="hover:underline">Logout</a></span>
+                {{else}}
+                <span class="inline-text text-indigo-600 text-1xl"><a href="/login" class="hover:underline">Login</a></span>
+                {{/if}}
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
+    <main class="main-content">
+        {{{body}}}
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/game-poster-home.js"></script>
+    <script src="/js/search-bar.js"></script>
+    <script src="/js/login.js"></script>
 
+    <script>
+       document.addEventListener('DOMContentLoaded', function () {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-  <main class="main-content">
-    {{{body}}}
-  </main>
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="/js/game-poster-home.js"></script>
-<script src="/js/search-bar.js"></script>
-<script src="/js/login.js"></script>
-
-
-  
+    mobileMenuButton.addEventListener('click', function () {
+        // Toggle the hidden class on the mobile menu
+        mobileMenu.classList.toggle('hidden');
+    });
+});
+    </script>
+</body>
 
 </html>

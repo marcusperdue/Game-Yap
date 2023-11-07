@@ -60,7 +60,7 @@ router.get('/:gameId', async (req, res) => {
        gameSummary: gameData.description,
        gameImage: gameData.background_image,
        gameId,
-       textClass: 'text-sm',
+       textClass: 'text-xs',
        loggedIn,
        comments, // Pass the comments array to the view
      });
