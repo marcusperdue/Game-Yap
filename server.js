@@ -11,7 +11,7 @@ const gameReviewRoutes = require('./controllers/gameReviewRoutes');
 const registrationRoutes = require('./controllers/registrationRoutes');
 const loginRoutes = require('./controllers/loginRoutes');
 const logoutRoutes = require('./controllers/logoutRoutes');
-const postRoutes =require('./controllers/postRoutes');
+ 
 const helpers = require('./utils/helpers');
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({
@@ -53,16 +53,15 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cors());
 
- 
+
 app.use('/gameRoutes', gameroutes);
 app.use('/search', searchRoutes);
 app.use('/game-review', gameReviewRoutes);
 app.use('/register', registrationRoutes);
 app.use('/login', loginRoutes);
 app.use('/logout', logoutRoutes);
-app.use('/postRoutes', postRoutes);
-
  
+
 app.use('/', routes);
 
 sequelize.sync().then(() => {

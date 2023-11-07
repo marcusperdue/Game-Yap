@@ -23,26 +23,30 @@
     
     <!-- Comment Form if Authenticated -->
     {{#if loggedIn}}
-    <form action="/game-review/{{gameId}}/post-comment" method="POST">  
-        <textarea name="commentText" placeholder="Write a comment" class="w-full p-2 border rounded"></textarea>
-        <button type="submit" class="mt-2 bg-indigo-600 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors">Submit Comment</button>
-    </form>
+<form id="commentForm" method="POST" data-gameId="{{gameId}}">
+    <input type="hidden" name="gameId" value="{{gameId}}">
+    <textarea name="commentText" placeholder="Write a comment" class="w-full p-2 border rounded"></textarea>
+    <button type="submit" class="mt-2 bg-indigo-600 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors">Submit Comment</button>
+</form>
     {{else}}
     <!-- Prompt to Sign in if Not Authenticated -->
     <p class="mt-4 text-white">Sign in to leave a comment</p>
     {{/if}} 
     
-    <!-- Display Comments -->
-    <section class="comments-section mt-4">
-        <div id="commentList" class="mt-2">
-            {{#each comments}}
-            <div class="comment bg-gray-800 bg-opacity-50 p-4 rounded mt-2">
-                <p class="text-gray-300">{{text}}</p>
-                <p class="text-white font-bold">{{user.username}}</p>
-            </div>
-            {{/each}}
+   
+<!-- Display Comments -->
+<section class="comments-section mt-4">
+    <div id="commentList" class="mt-2">
+     {{#each comments}}
+        <!-- Display Comment -->
+        <div class="comment bg-gray-800 bg-opacity-50 p-4 rounded mt-2">
+            <p class="text-gray-300">{{this.text}}</p>
+            <p class="text-white font-bold">{{this.username}}</p> <!-- Corrected username reference -->
         </div>
-    </section>
+    {{/each}}
+    </div>
+</section>
 </div>
 
 </section>
+<script src="/js/submit-comment.js"></script>

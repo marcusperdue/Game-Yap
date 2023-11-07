@@ -1,4 +1,3 @@
-// models/Post.js
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
@@ -12,6 +11,13 @@ Post.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user', // This is the table name that Sequelize will look for
+        key: 'id',
+      },
+    },
     title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -19,6 +25,10 @@ Post.init(
     content: {
       type: DataTypes.TEXT,
       allowNull: false,
+    },
+    external_game_id: {
+      type: DataTypes.STRING,
+      allowNull: true, // Set to false if this should be a required field
     },
   },
   {
