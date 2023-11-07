@@ -48,7 +48,7 @@ router.get('/:gameId', async (req, res) => {
        comments = comments.map(comment => {
          return {
            text: comment.comment_text,
-           username: comment.User ? comment.User.username : 'Anonymous',
+           username: comment.user ? comment.user.username : 'Anonymous',
            createdAt: comment.created_at
          };
        });
