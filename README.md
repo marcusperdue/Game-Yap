@@ -13,7 +13,26 @@
   [![Heroku](https://img.shields.io/badge/Heroku-%23430098.svg?style=flat&logo=heroku&logoColor=white)](https://www.heroku.com/)
 </div>
 
+## User Story
+
+As a user , I want to be able to log in to my account, rate a game, and log out when I'm done, so that I can contribute ratings and reviews to the gaming community.
+Acceptance Criteria:
+I can access Game Yap using my registered username and password.
+If I'm not already logged in, I should be presented with an option to log in or create an account.
+After entering my username and password, I can click a "Login" button to access my account.
+Once logged in, I have access to the app's features, including the ability to rate games.
+From the app's homepage or search bar, I can search for the game I want to rate.
+When I find the game I want to rate, I can click on it to access the game's rating and review page.
+On the game's rating and review page, I can view existing ratings and reviews from other users.
+There should be an option for me to rate the game. I can provide a numerical rating 1 to 5 stars.
+I can leave a written review with additional details about my experience with the game.
+After selecting my rating and, review, I can click a "Submit" or "Rate" button to submit my rating and review.
+Upon successful submission, I receive a confirmation message acknowledging that my rating and review have been added to the game's page.
+I also have the option to edit or delete my rating and review if I wish to make changes or remove my contribution.
+After I have rated the game and completed my session, I can click a "Logout" log out of my account.
+
 ## Description
+
 Game Yap is an innovative web application designed to provide an immersive and interactive gaming experience for users. Our platform serves as a comprehensive hub for both seasoned gamers and newcomers, offering a wide array of features that cater to the diverse gaming community.
 ## Team Members
 
