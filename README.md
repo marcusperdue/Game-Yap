@@ -1,7 +1,7 @@
 <div align="center">
 
 # Game-Yap
-<img src="./public/images/Game-Yap screenshot.png" alt="">
+[![Game-Yap](/public/images/Screenshot%202023-11-07%20at%204.43.18%20PM.png)](https://desolate-sea-54298-2d2f1e6b62d8.herokuapp.com/)
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
    [![HTML](https://img.shields.io/badge/HTML5-%23E34F26.svg?style=flat&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
@@ -10,7 +10,6 @@
   [![Node.js Badge](https://img.shields.io/badge/Node.js-393?logo=nodedotjs&logoColor=fff&style=flat)](https://nodejs.org/en) 
   [![MySQL Badge](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=fff&style=flat)](https://www.mysql.com/)
   [![Express.js Badge](https://img.shields.io/badge/Express.js-000?logo=express&logoColor=fff&style=flat)](https://expressjs.com/)
-  [![React Badge](https://img.shields.io/badge/React-%2361DAFB.svg?style=flat&logo=react&logoColor=white)](https://reactjs.org/)
   [![Heroku](https://img.shields.io/badge/Heroku-%23430098.svg?style=flat&logo=heroku&logoColor=white)](https://www.heroku.com/)
 </div>
 
