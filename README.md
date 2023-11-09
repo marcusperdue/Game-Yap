@@ -34,16 +34,12 @@ After I have rated the game and completed my session, I can click a "Logout" log
 ## Description
 
 Game Yap is an innovative web application designed to provide an immersive and interactive gaming experience for users. Our platform serves as a comprehensive hub for both seasoned gamers and newcomers, offering a wide array of features that cater to the diverse gaming community.
-## Team Members
-
-* **[Chris](https://github.com/CrisCo116)** - Role (Developer, Designer)
-* **[Sefufim](https://github.com/sefu-alv)** - Role (Developer, Designer)
-* **[Marcus](https://github.com/marcusperdue)** - Role (Developer, Designer)
 
 ## Table of Contents
 
 * [Installation](#installation)
 * [Usage](#usage)
+* [Motivation](#motivation)
 * [License](#license)
 * [Contact](#contact)
 
@@ -71,3 +67,40 @@ Our team's motivation for this project was to create a web app that would allow 
 ## License
 
 [MIT License](https://opensource.org/licenses/MIT)
+
+ 
+
+ ## Contact
+<div align="left">
+
+  <p>Special thanks to the following contributors who have helped make this project possible:</p>
+</div>
+
+<div style="display: flex; justify-content: flex-start; align-items: left; flex-wrap: wrap;">
+  <div style="text-align: center; margin: 0 15px;">
+   <a href="https://github.com/sefu-alv">
+      <img src="https://avatars.githubusercontent.com/sefu-alv" alt="Sefufim's Avatar" width="100">
+    </a>
+    <br>
+   <a href="https://github.com/sefu-alv">Sefufim</a>
+  </div>
+
+  <div style="text-align: center; margin: 0 15px;">
+   <a href="https://github.com/CrisCo116">
+     <img src="https://avatars.githubusercontent.com/CrisCo116" alt="Chris's Avatar" width="100">
+    </a>
+    <br>
+    <a href="https://github.com/CrisCo116">Chris</a>
+  </div>
+
+  
+  <div style="text-align: center; margin: 0 15px;">
+    <a href="https://github.com/marcusperdue">
+      <img src="https://avatars.githubusercontent.com/marcusperdue" alt="marcusperdue's Avatar" width="100">
+    </a>
+    <br>
+    <a href="https://github.com/marcusperdue">marcusperdue</a>
+  </div>
+</div>
+
+</div>
