@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="64x64" href="/images/logo.png">
-    <title>Game-Yap</title>
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<link href="/images/logo.png" rel="icon" sizes="64x64" type="image/png">
+	<title>Game-Yap</title>
+	<link href="/css/styles.css" rel="stylesheet" type="text/css">
+	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com" rel="preconnect">
+	<link href="https://fonts.gstatic.com" rel="preconnect">
+	<link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
 </head>
-
 <body>
     <nav class="header p-4 fixed top-0 left-0 w-full z-50 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
@@ -27,11 +25,12 @@
                 <!-- Mobile navigation links go here -->
                <div id="mobile-menu" class="hidden lg:hidden">
     <span class="block text-indigo-600 text-1xl"><a href="/" class="hover:underline">Home</a></span>
-    <!-- Conditional rendering based on login -->
+    {{#if loggedIn}}
     <span class="block text-indigo-600 text-1xl"><a href="/profile" class="hover:underline">Profile</a></span>
-    <span class="block text-indigo-600 text-1xl"><a href="/login" class="hover:underline">login</a></span>
     <span class="block text-indigo-600 text-1xl"><a href="/logout" class="hover:underline">Logout</a></span>
-    <!-- ... other menu items -->
+    {{else}}
+    <span class="block text-indigo-600 text-1xl"><a href="/login" class="hover:underline">Login</a></span>
+     {{/if}}
 </div>
             </div>
             <div class="hidden lg:flex items-center space-x-4">
@@ -47,25 +46,27 @@
         </div>
     </nav>
 
-    <main class="main-content">
-        {{{body}}}
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="/js/game-poster-home.js"></script>
-    <script src="/js/search-bar.js"></script>
-    <script src="/js/login.js"></script>
+<main class="main-content">
+		{{{body}}}
+	</main>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js">
+	</script> 
+	<script src="/js/game-poster-home.js">
+	</script> 
+	<script src="/js/search-bar.js">
+	</script> 
+	<script src="/js/login.js">
+	</script> 
+	<script>
+	      document.addEventListener('DOMContentLoaded', function () {
+	   const mobileMenuButton = document.getElementById('mobile-menu-button');
+	   const mobileMenu = document.getElementById('mobile-menu');
 
-    <script>
-       document.addEventListener('DOMContentLoaded', function () {
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    mobileMenuButton.addEventListener('click', function () {
-        // Toggle the hidden class on the mobile menu
-        mobileMenu.classList.toggle('hidden');
-    });
-});
-    </script>
+	   mobileMenuButton.addEventListener('click', function () {
+	       // Toggle the hidden class on the mobile menu
+	       mobileMenu.classList.toggle('hidden');
+	   });
+	});
+	</script>
 </body>
-
 </html>

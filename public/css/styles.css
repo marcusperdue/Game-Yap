@@ -4,10 +4,11 @@ html {
 body {
   background: linear-gradient(to bottom, #1c0f43, black);
   background-color: #1c0f43;
+  font-size: 27px;
+  font-weight: 700;
 }
 .header {
   backdrop-filter: blur(10px);
-  /* Adjust the blur intensity as needed */
   -webkit-backdrop-filter: blur(10px);
   color: rgb(0, 0, 0);
 }
@@ -61,7 +62,6 @@ nav{
 #bg-video {
   position: absolute;
   bottom: 0;
-  /* Position from the bottom of the container */
   left: 0;
   width: 100%;
   height: 125%;
@@ -73,22 +73,15 @@ a {
   text-decoration: none;
 }
 a {
-  background: linear-gradient( to right, rgba(0, 0, 0, 0), /* Color #000020 with 100% transparency */
+  background: linear-gradient( to right, rgba(0, 0, 0, 0),  
   rgba(0, 0, 0, 0)), linear-gradient( to right, rgba(255, 0, 0, 1), rgba(255, 0, 180, 1), rgb(255, 0, 132), rgb(79 70 229));
   background-size: 100% 3px, 0 3px;
   background-position: 100% 100%, 0 100%;
   background-repeat: no-repeat;
   transition: background-size 0.3s;
-  /* Reduce the transition duration for smoother animation */
 }
 a:hover {
   background-size: 0 3px, 100% 3px;
-}
-/* Presentational Styles */
-
-body {
-  font-size: 27px;
-  font-weight: 700;
 }
 .game-rating {
   display: flex;
@@ -97,9 +90,37 @@ body {
   padding-bottom: 5px;
 }
 .expand-on-hover {
-  transition: transform 0.3s; /* Adjust the transition duration as needed */
+  transition: transform 0.3s; 
+}
+.expand-on-hover:hover {
+  transform: scale(1.1); 
 }
 
-.expand-on-hover:hover {
-  transform: scale(1.1); /* Adjust the scale factor for expansion */
+@media (max-width: 380px) {
+  body {
+    background: linear-gradient(to bottom, #1c0f43, black);
+    background-color: #1c0f43;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .text-6xl {
+    font-size: 1.5em !important;
+    line-height: 1;
+}
+}
+@media (max-width:280px) {
+  body {
+    background: linear-gradient(to bottom, #1c0f43, black);
+    background-color: #1c0f43;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .text-6xl {
+    font-size: 1.5em !important;
+    line-height: 1;
+}
+}
+
+.white-icon {
+  color: white;
 }

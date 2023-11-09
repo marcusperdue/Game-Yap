@@ -3,28 +3,27 @@
   <h1 class="text-3xl text-center text-white font-semibold mt-40 mb-4">Game
     Search Results</h1>
  <div class="container mx-auto mt-10 flex flex-col items-center">
-    <ul
-      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
-    >
-      {{#each gameData}}
-        <li class="p-4  ">
-          <div class="game-card">
-             <a href="/game-review/{{this.id}}" class="block cursor-pointer">
-             <img src="{{this.background_image}}" alt="{{this.name}}" class="game-image" />
+  <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+  {{#each gameData}}
+    <li class="p-4">
+      <div class="game-card">
+        <a href="/game-review/{{this.id}}" class="block cursor-pointer">
+          <img src="{{this.background_image}}" alt="{{this.name}}" class="game-image" />
           <p class="text-white text-center">{{this.name}}</p>
           
           <div class="game-rating">
-          {{#if (gt this.rating 0.5)}}<i class="fa-solid fa-gamepad"></i>{{/if}}
-          {{#if (gt this.rating 1.5)}}<i class="fa-solid fa-gamepad"></i>{{/if}}
-          {{#if (gt this.rating 2.5)}}<i class="fa-solid fa-gamepad"></i>{{/if}}
-          {{#if (gt this.rating 3.5)}}<i class="hi fa-solid fa-gamepad"></i>{{/if}}
-          {{#if (gt this.rating 4.5)}}<i class="fa-solid fa-gamepad"></i>{{/if}}
-        </div>
-          </a>
+            {{#if (gt this.rating 0.5)}}<i class="fa-solid fa-gamepad white-icon"></i>{{/if}}
+            {{#if (gt this.rating 1.5)}}<i class="fa-solid fa-gamepad white-icon"></i>{{/if}}
+            {{#if (gt this.rating 2.5)}}<i class="fa-solid fa-gamepad white-icon"></i>{{/if}}
+            {{#if (gt this.rating 3.5)}}<i class="hi fa-solid fa-gamepad white-icon"></i>{{/if}}
+            {{#if (gt this.rating 4.5)}}<i class="fa-solid fa-gamepad white-icon"></i>{{/if}}
           </div>
-        </li>
-      {{/each}}
-    </ul>
+        </a>
+      </div>
+    </li>
+  {{/each}}
+</ul>
+
 
   </div>
 </div>

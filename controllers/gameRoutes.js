@@ -1,3 +1,7 @@
+/*
+  This module defines a route to fetch data from the RAWG API and sends it to the client.
+*/
+
 const express = require('express');
 const axios = require('axios');
 const router = express.Router(); // Create a router

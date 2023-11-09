@@ -1,3 +1,8 @@
+/*
+  This module defines a route for displaying a user's profile.
+  It ensures that the user is authenticated before accessing the profile and renders the "profile" template with user data.
+*/
+
 // Import necessary modules and middleware
 const express = require('express');
 const router = express.Router();

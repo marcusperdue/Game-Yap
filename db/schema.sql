@@ -1,3 +1,8 @@
+/*
+  This SQL script creates a MySQL database named 'game_yap_db' and defines tables for user information, posts, and comments.
+  It establishes relationships between users, posts, and comments for a game discussion or review project.
+*/
+
 CREATE DATABASE game_yap_db;
 -- Specify the database you want to use
 USE game_yap_db;

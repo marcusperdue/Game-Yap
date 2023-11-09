@@ -1,3 +1,8 @@
+/*
+  This module defines routes for handling game details and comments.
+  It includes routes for retrieving game details from the RAWG API and posting comments on games.
+*/
+
 const express = require('express');
 const axios = require('axios');
 const router = express.Router();

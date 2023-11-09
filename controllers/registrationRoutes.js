@@ -1,3 +1,8 @@
+/*
+  This module defines a route for user registration.
+  It checks for required fields, username availability, and handles registration errors.
+*/
+
 const router = require('express').Router();
 const { User } = require('../models/');
 

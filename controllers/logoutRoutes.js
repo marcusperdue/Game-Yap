@@ -1,3 +1,8 @@
+/*
+  This module defines a route for handling user logout.
+  It clears the session data, effectively logging the user out, and redirects to the home page.
+*/
+
 const express = require('express');
 const router = express.Router();
 

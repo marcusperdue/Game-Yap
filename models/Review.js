@@ -37,10 +37,10 @@ Review.init(
   },
   {
     sequelize,
-    timestamps: false, // Disable Sequelize's timestamps
-    freezeTableName: true, // Use the table name specified here
-    underscored: true, // Use snake_case for field names
-    modelName: 'review', // Set the model name to 'review'
+    timestamps: false,  
+    freezeTableName: true, 
+    underscored: true,  
+    modelName: 'review',  
   }
 );
 

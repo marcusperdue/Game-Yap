@@ -1,3 +1,8 @@
+/*
+  This module defines a route for performing game searches using the RAWG API.
+  It handles search queries, processes the search results, and renders a template with game data.
+*/
+
 const express = require('express');
 const router = express.Router();
 const axios = require('axios');

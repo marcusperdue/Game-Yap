@@ -1,3 +1,10 @@
+/*
+  Simple Node.js code for setting up a Sequelize database connection.
+  This code checks for the presence of a JAWSDB_URL environment variable,
+  which is used in production, and falls back to local database settings
+  if the environment variable is not defined.
+*/
+
 const Sequelize = require('sequelize');
 require('dotenv').config();
 

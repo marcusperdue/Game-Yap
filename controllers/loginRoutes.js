@@ -1,3 +1,8 @@
+/*
+  This module defines a route for handling user login.
+  It checks if the provided username and password match a user in the database and creates a session upon successful login.
+*/
+
 // Inside loginRoutes.js or wherever you handle login logic
 const express = require('express');
 const router = express.Router();

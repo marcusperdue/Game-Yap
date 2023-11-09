@@ -1,5 +1,9 @@
-const router = require('express').Router();
+/*
+  This module defines the main router for organizing and routing different parts of the application.
+  It includes routes for home, games, search, registration, login, logout, and user profiles.
+*/
 
+const router = require('express').Router();
 const homeRoutes = require('./homeRoutes');
 const gameRoutes = require('./gameRoutes');
 const searchRoutes = require('./searchRoutes');
